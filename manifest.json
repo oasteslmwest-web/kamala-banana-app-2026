@@ -1,0 +1,10 @@
+{
+  "name": "Kamala Banana Leaf Export Pvt Ltd",
+  "short_name": "Kamala Banana Leaf",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#f59e0b",
+  "description": "Kamala Banana Leaf Export Pvt Ltd Corporate Management Portal",
+  "orientation": "portrait"
+}
