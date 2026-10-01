@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kamala Banana Leaf Export Pvt Ltd</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fff8e1;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#f59e0b,#facc15);
+    color:#3b2200;
+    padding:18px;
+    text-align:center;
+    font-weight:bold;
+    font-size:22px;
+    box-shadow:0 3px 10px #0002;
+}
+
+.container{
+    max-width:1100px;
+    margin:25px auto;
+    padding:15px;
+}
+
+.login-box{
+    max-width:430px;
+    margin:70px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 30px #0002;
+}
+
+.logo{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.company{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:#a85d00;
+    margin-bottom:25px;
+}
+
+input,select{
+    width:100%;
+    padding:13px;
+    margin:8px 0 15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+}
+
+button{
+    border:0;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn{
+    background:#f59e0b;
+    color:white;
+}
+
+.btn:hover{
+    background:#d97706;
+}
+
+.full{
+    width:100%;
+}
+
+.error{
+    color:#dc2626;
+    font-size:13px;
+    margin-top:-10px;
+    margin-bottom:10px;
+}
+
+#app{
+    display:none;
+}
+
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:240px;
+    background:#3b2200;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    color:#facc15;
+    margin-bottom:25px;
+}
+
+.sidebar button{
+    display:block;
+    width:100%;
+    margin:8px 0;
+    background:transparent;
+    color:white;
+    text-align:left;
+}
+
+.sidebar button:hover{
+    background:#ffffff22;
+}
+
+.main{
+    flex:1;
+    padding:20px;
+}
+
+.topbar{
+    background:white;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px #0001;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:15px;
+    box-shadow:0 4px 15px #0001;
+    cursor:pointer;
+}
+
+.card h3{
+    color:#a85d00;
+    margin-bottom:10px;
+}
+
+.card strong{
+    font-size:28px;
+}
+
+.section{
+    display:none;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 15px #0001;
+    margin-bottom:20px;
+}
+
+.section.active{
+    display:block;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+th{
+    background:#fff3cd;
+}
+
+.badge{
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.completed{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.pending{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.processing{
+    background:#dbeafe;
+    color:#1e40af;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#0008;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    background:white;
+    max-width:600px;
+    width:100%;
+    max-height:90vh;
+    overflow:auto;
+    padding:25px;
+    border-radius:18px;
+}
+
+.close{
+    float:right;
+    background:#dc2626;
+    color:white;
+}
+
+.report-card{
+    background:#fff8dc;
+    padding:15px;
+    margin:10px 0;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+@media(max-width:800px){
+    .layout{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:8px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        gap:10px;
+        align-items:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+
+<header>
+    Kamala Banana Leaf Export Pvt Ltd
+</header>
+
+<div class="login-box">
+
+<div class="logo">🍃</div>
+
+<div class="company">
+    Kamala Banana Leaf Export Pvt Ltd
+</div>
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter email">
+
+<div id="emailError" class="error"></div>
+
+<label>Password</label>
+
+<div style="position:relative;">
+<input type="password" id="password" placeholder="Enter password">
+<button onclick="togglePassword()" style="position:absolute;right:5px;top:5px;background:none;">👁️</button>
+</div>
+
+<div id="passwordError" class="error"></div>
+
+<label>
+<input type="checkbox" id="remember" style="width:auto;">
+ Remember Me
+</label>
+
+<br><br>
+
+<button class="btn full" onclick="login()">LOGIN</button>
+
+<br><br>
+
+<button class="btn full" onclick="forgotPassword()">Forgot Password?</button>
+
+</div>
+</div>
+
+
+<!-- APP -->
+<div id="app">
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>🍃 KBL</h2>
+
+<button onclick="showSection('dashboard')">🏠 Dashboard</button>
+<button onclick="showSection('orders')">📦 Orders</button>
+<button onclick="showSection('products')">🌿 Products</button>
+<button onclick="showSection('employees')">👨‍💼 Employees</button>
+<button onclick="showSection('reports')">📊 Reports</button>
+<button onclick="showSection('profile')">👤 Profile</button>
+<button onclick="showSection('settings')">⚙️ Settings</button>
+
+<button onclick="logout()">🚪 Logout</button>
+
+</div>
+
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="topbar">
+
+<h2 id="pageTitle">Dashboard</h2>
+
+<div>
+👤 Admin
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+
+<div class="cards">
+
+<div class="card" onclick="showSection('orders')">
+<h3>Total Orders</h3>
+<strong id="totalOrders">0</strong>
+</div>
+
+<div class="card" onclick="showSection('products')">
+<h3>Total Products</h3>
+<strong id="totalProducts">0</strong>
+</div>
+
+<div class="card" onclick="showSection('employees')">
+<h3>Employees</h3>
+<strong id="totalEmployees">0</strong>
+</div>
+
+<div class="card" onclick="showSection('reports')">
+<h3>Total Sales</h3>
+<strong id="totalSales">₹0</strong>
+</div>
+
+</div>
+
+<h3>Recent Orders</h3>
+
+<table>
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="dashboardOrders"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- ORDERS -->
+<div id="orders" class="section">
+
+<h2>📦 Orders</h2>
+
+<br>
+
+<button class="btn" onclick="addDemoOrder()">➕ Add Demo Order</button>
+
+<table>
+
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Qty</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="ordersTable"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- PRODUCTS -->
+<div id="products" class="section">
+
+<h2>🌿 Products</h2>
+
+<br>
+
+<button class="btn" onclick="addProduct()">➕ Add Product</button>
+
+<table>
+
+<thead>
+<tr>
+<th>Product</th>
+<th>Type</th>
+<th>Stock</th>
+<th>Price</th>
+</tr>
+</thead>
+
+<tbody id="productsTable"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- EMPLOYEES -->
+<div id="employees" class="section">
+
+<h2>👨‍💼 Employees</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Role</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="employeesTable"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- REPORTS -->
+<div id="reports" class="section">
+
+<h2>📊 Reports</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Orders</h3>
+<strong id="reportOrders">0</strong>
+</div>
+
+<div class="card">
+<h3>Sales</h3>
+<strong id="reportSales">₹0</strong>
+</div>
+
+<div class="card">
+<h3>Products</h3>
+<strong id="reportProducts">0</strong>
+</div>
+
+<div class="card">
+<h3>Employees</h3>
+<strong id="reportEmployees">0</strong>
+</div>
+
+</div>
+
+<h3>Admin Report List</h3>
+
+<div class="report-card">
+<span>RPT-001 — Sales Report</span>
+<button class="btn" onclick="viewReport('Sales Report')">View</button>
+</div>
+
+<div class="report-card">
+<span>RPT-002 — Orders Report</span>
+<button class="btn" onclick="viewReport('Orders Report')">View</button>
+</div>
+
+<div class="report-card">
+<span>RPT-003 — Employee Report</span>
+<button class="btn" onclick="viewReport('Employee Report')">View</button>
+</div>
+
+<br>
+
+<button class="btn" onclick="downloadCSV()">⬇ CSV</button>
+
+<button class="btn" onclick="downloadExcel()">⬇ Excel</button>
+
+<button class="btn" onclick="printReport()">🖨 Print / PDF</button>
+
+</div>
+
+
+<!-- PROFILE -->
+<div id="profile" class="section">
+
+<h2>👤 Profile</h2>
+
+<br>
+
+<p><b>Company:</b> Kamala Banana Leaf Export Pvt Ltd</p>
+
+<p><b>User:</b> Admin</p>
+
+<p><b>Email:</b> admin@kamalabanana.com</p>
+
+<p><b>Role:</b> Administrator</p>
+
+</div>
+
+
+<!-- SETTINGS -->
+<div id="settings" class="section">
+
+<h2>⚙️ Settings</h2>
+
+<br>
+
+<label>Company Name</label>
+
+<input value="Kamala Banana Leaf Export Pvt Ltd">
+
+<label>Currency</label>
+
+<select>
+<option>Indian Rupee ₹</option>
+<option>US Dollar $</option>
+</select>
+
+<br>
+
+<button class="btn" onclick="alert('Settings Saved Successfully')">
+Save Settings
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ORDER MODAL -->
+<div id="orderModal" class="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('orderModal')">X</button>
+
+<h2>📦 Order Details</h2>
+
+<div id="orderDetails"></div>
+
+</div>
+
+</div>
+
+
+<!-- REPORT MODAL -->
+<div id="reportModal" class="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('reportModal')">X</button>
+
+<h2 id="reportTitle"></h2>
+
+<br>
+
+<div id="reportContent"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let orders = JSON.parse(localStorage.getItem("kamalaOrders")) || [
+
+{
+id:"ORD001",
+customer:"ABC Traders",
+product:"Premium Banana Leaf",
+qty:500,
+amount:45000,
+status:"Completed"
+},
+
+{
+id:"ORD002",
+customer:"Green Leaf Stores",
+product:"Fresh Banana Leaf",
+qty:350,
+amount:32500,
+status:"Completed"
+},
+
+{
+id:"ORD003",
+customer:"Fresh Market",
+product:"Export Banana Leaf",
+qty:250,
+amount:18700,
+status:"Pending"
+},
+
+{
+id:"ORD004",
+customer:"Sri Traders",
+product:"Premium Banana Leaf",
+qty:600,
+amount:52000,
+status:"Processing"
+}
+
+];
+
+
+let products = JSON.parse(localStorage.getItem("kamalaProducts")) || [
+
+{
+name:"Premium Banana Leaf",
+type:"Export",
+stock:1200,
+price:120
+},
+
+{
+name:"Fresh Banana Leaf",
+type:"Domestic",
+stock:850,
+price:80
+},
+
+{
+name:"Export Banana Leaf",
+type:"Export",
+stock:450,
+price:100
+}
+
+];
+
+
+let employees = JSON.parse(localStorage.getItem("kamalaEmployees")) || [
+
+{
+id:"EMP001",
+name:"Ravi Kumar",
+department:"Production",
+role:"Manager",
+status:"Active"
+},
+
+{
+id:"EMP002",
+name:"Priya",
+department:"Accounts",
+role:"Accountant",
+status:"Active"
+},
+
+{
+id:"EMP003",
+name:"Suresh",
+department:"Export",
+role:"Export Executive",
+status:"Active"
+}
+
+];
+
+
+function togglePassword(){
+
+let p=document.getElementById("password");
+
+p.type=p.type==="password" ? "text" : "password";
+
+}
+
+
+function login(){
+
+let email=document.getElementById("email").value.trim();
+
+let password=document.getElementById("password").value.trim();
+
+document.getElementById("emailError").innerText="";
+
+document.getElementById("passwordError").innerText="";
+
+let valid=true;
+
+if(!email.includes("@")){
+
+document.getElementById("emailError").innerText="Please enter a valid email";
+
+valid=false;
+
+}
+
+if(password===""){
+
+document.getElementById("passwordError").innerText="Password is required";
+
+valid=false;
+
+}
+
+if(!valid) return;
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("app").style.display="block";
+
+renderAll();
+
+}
+
+
+function forgotPassword(){
+
+alert("Password reset link demo sent to your email.");
+
+}
+
+
+function logout(){
+
+document.getElementById("app").style.display="none";
+
+document.getElementById("loginPage").style.display="block";
+
+}
+
+
+function showSection(id){
+
+document.querySelectorAll(".section").forEach(s=>{
+
+s.classList.remove("active");
+
+});
+
+document.getElementById(id).classList.add("active");
+
+let names={
+
+dashboard:"Dashboard",
+orders:"Orders",
+products:"Products",
+employees:"Employees",
+reports:"Reports",
+profile:"Profile",
+settings:"Settings"
+
+};
+
+document.getElementById("pageTitle").innerText=names[id];
+
+}
+
+
+function statusBadge(status){
+
+let cls=status.toLowerCase();
+
+return `<span class="badge ${cls}">${status}</span>`;
+
+}
+
+
+function renderAll(){
+
+document.getElementById("totalOrders").innerText=orders.length;
+
+document.getElementById("totalProducts").innerText=products.length;
+
+document.getElementById("totalEmployees").innerText=employees.length;
+
+let sales=orders.reduce((sum,o)=>sum+Number(o.amount),0);
+
+document.getElementById("totalSales").innerText="₹"+sales.toLocaleString("en-IN");
+
+document.getElementById("reportOrders").innerText=orders.length;
+
+document.getElementById("reportProducts").innerText=products.length;
+
+document.getElementById("reportEmployees").innerText=employees.length;
+
+document.getElementById("reportSales").innerText="₹"+sales.toLocaleString("en-IN");
+
+
+document.getElementById("dashboardOrders").innerHTML=orders.slice(0,5).map(o=>`
+
+<tr>
+
+<td>${o.id}</td>
+
+<td>${o.customer}</td>
+
+<td>${o.product}</td>
+
+<td>₹${Number(o.amount).toLocaleString("en-IN")}</td>
+
+<td>${statusBadge(o.status)}</td>
+
+</tr>
+
+`).join("");
+
+
+document.getElementById("ordersTable").innerHTML=orders.map((o,i)=>`
+
+<tr>
+
+<td>${o.id}</td>
+
+<td>${o.customer}</td>
+
+<td>${o.product}</td>
+
+<td>${o.qty}</td>
+
+<td>₹${Number(o.amount).toLocaleString("en-IN")}</td>
+
+<td>${statusBadge(o.status)}</td>
+
+<td>
+
+<button class="btn" onclick="viewOrder(${i})">View</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+
+document.getElementById("productsTable").innerHTML=products.map(p=>`
+
+<tr>
+
+<td>${p.name}</td>
+
+<td>${p.type}</td>
+
+<td>${p.stock}</td>
+
+<td>₹${p.price}</td>
+
+</tr>
+
+`).join("");
+
+
+document.getElementById("employeesTable").innerHTML=employees.map(e=>`
+
+<tr>
+
+<td>${e.id}</td>
+
+<td>${e.name}</td>
+
+<td>${e.department}</td>
+
+<td>${e.role}</td>
+
+<td>${e.status}</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function viewOrder(index){
+
+let o=orders[index];
+
+document.getElementById("orderDetails").innerHTML=`
+
+<p><b>Order ID:</b> ${o.id}</p>
+
+<p><b>Customer:</b> ${o.customer}</p>
+
+<p><b>Product:</b> ${o.product}</p>
+
+<p><b>Quantity:</b> ${o.qty}</p>
+
+<p><b>Amount:</b> ₹${Number(o.amount).toLocaleString("en-IN")}</p>
+
+<p><b>Status:</b> ${statusBadge(o.status)}</p>
+
+`;
+
+document.getElementById("orderModal").style.display="flex";
+
+}
+
+
+function closeModal(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
+
+function addDemoOrder(){
+
+let number=orders.length+1;
+
+orders.push({
+
+id:"ORD"+String(number).padStart(3,"0"),
+
+customer:"New Customer",
+
+product:"Premium Banana Leaf",
+
+qty:100,
+
+amount:12000,
+
+status:"Pending"
+
+});
+
+saveData();
+
+renderAll();
+
+alert("New demo order added.");
+
+}
+
+
+function addProduct(){
+
+let name=prompt("Product Name:");
+
+if(!name) return;
+
+let type=prompt("Type: Export / Domestic","Export");
+
+let stock=prompt("Stock","500");
+
+let price=prompt("Price","100");
+
+products.push({
+
+name:name,
+
+type:type,
+
+stock:Number(stock),
+
+price:Number(price)
+
+});
+
+saveData();
+
+renderAll();
+
+}
+
+
+function viewReport(title){
+
+document.getElementById("reportTitle").innerText=title;
+
+let html="";
+
+if(title==="Sales Report"){
+
+let total=orders.reduce((s,o)=>s+Number(o.amount),0);
+
+html=`
+
+<h3>Total Sales</h3>
+
+<p style="font-size:28px;font-weight:bold;color:#a85d00">
+
+₹${total.toLocaleString("en-IN")}
+
+</p>
+
+`;
+
+}
+
+else if(title==="Orders Report"){
+
+html=`
+
+<table>
+
+<tr>
+<th>Order</th>
+<th>Customer</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+${orders.map(o=>`
+
+<tr>
+
+<td>${o.id}</td>
+
+<td>${o.customer}</td>
+
+<td>₹${Number(o.amount).toLocaleString("en-IN")}</td>
+
+<td>${o.status}</td>
+
+</tr>
+
+`).join("")}
+
+</table>
+
+`;
+
+}
+
+else{
+
+html=`
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Role</th>
+</tr>
+
+${employees.map(e=>`
+
+<tr>
+
+<td>${e.id}</td>
+
+<td>${e.name}</td>
+
+<td>${e.department}</td>
+
+<td>${e.role}</td>
+
+</tr>
+
+`).join("")}
+
+</table>
+
+`;
+
+}
+
+document.getElementById("reportContent").innerHTML=html;
+
+document.getElementById("reportModal").style.display="flex";
+
+}
+
+
+function downloadCSV(){
+
+let csv="Order ID,Customer,Product,Quantity,Amount,Status\n";
+
+orders.forEach(o=>{
+
+csv+=`${o.id},${o.customer},${o.product},${o.qty},${o.amount},${o.status}\n`;
+
+});
+
+let blob=new Blob([csv],{type:"text/csv"});
+
+let url=URL.createObjectURL(blob);
+
+let a=document.createElement("a");
+
+a.href=url;
+
+a.download="Kamala_Banana_Orders.csv";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+}
+
+
+function downloadExcel(){
+
+let table=`
+
+<table border="1">
+
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Quantity</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+${orders.map(o=>`
+
+<tr>
+
+<td>${o.id}</td>
+<td>${o.customer}</td>
+<td>${o.product}</td>
+<td>${o.qty}</td>
+<td>${o.amount}</td>
+<td>${o.status}</td>
+
+</tr>
+
+`).join("")}
+
+</table>
+`;
+
+let blob=new Blob([table],{type:"application/vnd.ms-excel"});
+
+let url=URL.createObjectURL(blob);
+
+let a=document.createElement("a");
+
+a.href=url;
+
+a.download="Kamala_Banana_Orders.xls";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+}
+
+
+function printReport(){
+
+let total=orders.reduce((s,o)=>s+Number(o.amount),0);
+
+let html=`
+
+<html>
+
+<head>
+
+<title>Kamala Banana Report</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #999;
+padding:8px;
+}
+
+th{
+background:#facc15;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Kamala Banana Leaf Export Pvt Ltd</h1>
+
+<h2>Orders Report</h2>
+
+<p>Total Orders: ${orders.length}</p>
+
+<p>Total Sales: ₹${total.toLocaleString("en-IN")}</p>
+
+<table>
+
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+${orders.map(o=>`
+
+<tr>
+
+<td>${o.id}</td>
+<td>${o.customer}</td>
+<td>${o.product}</td>
+<td>₹${o.amount}</td>
+<td>${o.status}</td>
+
+</tr>
+
+`).join("")}
+
+</table>
+
+</body>
+
+</html>
+`;
+
+let win=window.open("","_blank");
+
+win.document.write(html);
+
+win.document.close();
+
+win.print();
+
+}
+
+
+function saveData(){
+
+localStorage.setItem("kamalaOrders",JSON.stringify(orders));
+
+localStorage.setItem("kamalaProducts",JSON.stringify(products));
+
+localStorage.setItem("kamalaEmployees",JSON.stringify(employees));
+
+}
+
+</script>
+
+</body>
+  </html>
