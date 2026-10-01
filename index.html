@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kamala Banana Leaf Export Pvt Ltd</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Kamala Banana Leaf Export Pvt Ltd
+</title>
 
 <!-- PWA -->
-<meta name="theme-color" content="#f59e0b">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="manifest" href="manifest.json">
+<meta name="theme-color"
+content="#f59e0b">
+
+<meta name="mobile-web-app-capable"
+content="yes">
+
+<meta name="apple-mobile-web-app-capable"
+content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+content="default">
+
+<link rel="manifest"
+href="manifest.json">
+
 
 <style>
+
+/* ================= GLOBAL ================= */
 
 *{
     box-sizing:border-box;
@@ -28,338 +45,514 @@ body{
     color:#333;
 }
 
-/* HEADER */
+
+/* ================= HEADER ================= */
 
 header{
-    background:linear-gradient(135deg,#f59e0b,#facc15);
+    background:linear-gradient(
+        135deg,
+        #f59e0b,
+        #facc15
+    );
+
     color:#3b2200;
+
     padding:18px;
+
     text-align:center;
+
     font-weight:bold;
+
     font-size:22px;
+
     box-shadow:0 3px 10px #0002;
 }
 
-/* LOGIN */
+
+/* ================= LOGIN ================= */
 
 .login-box{
+
     max-width:430px;
+
     margin:70px auto;
+
     background:white;
+
     padding:30px;
+
     border-radius:20px;
+
     box-shadow:0 8px 30px #0002;
 }
 
 .logo{
+
     text-align:center;
+
     font-size:55px;
+
     margin-bottom:10px;
 }
 
 .company{
+
     text-align:center;
+
     font-size:22px;
+
     font-weight:bold;
+
     color:#a85d00;
+
     margin-bottom:25px;
 }
 
 input,
 select{
+
     width:100%;
+
     padding:13px;
+
     margin:8px 0 15px;
+
     border:1px solid #ddd;
+
     border-radius:10px;
+
     font-size:15px;
 }
 
 button{
+
     border:0;
+
     padding:12px 18px;
+
     border-radius:10px;
+
     cursor:pointer;
+
     font-weight:bold;
 }
 
 .btn{
+
     background:#f59e0b;
+
     color:white;
 }
 
 .btn:hover{
+
     background:#d97706;
 }
 
 .full{
+
     width:100%;
 }
 
 .error{
+
     color:#dc2626;
+
     font-size:13px;
+
     margin-top:-10px;
+
     margin-bottom:10px;
 }
 
-/* APP */
+
+/* ================= APP ================= */
 
 #app{
+
     display:none;
 }
 
 .layout{
+
     display:flex;
+
     min-height:100vh;
 }
 
-/* SIDEBAR */
+
+/* ================= SIDEBAR ================= */
 
 .sidebar{
+
     width:240px;
+
     background:#3b2200;
+
     color:white;
+
     padding:20px;
 }
 
 .sidebar h2{
+
     color:#facc15;
+
     margin-bottom:25px;
 }
 
 .sidebar button{
+
     display:block;
+
     width:100%;
+
     margin:8px 0;
+
     background:transparent;
+
     color:white;
+
     text-align:left;
 }
 
 .sidebar button:hover{
+
     background:#ffffff22;
 }
 
-/* MAIN */
+
+/* ================= MAIN ================= */
 
 .main{
+
     flex:1;
+
     padding:20px;
 }
 
 .topbar{
+
     background:white;
+
     padding:18px;
+
     border-radius:15px;
+
     margin-bottom:20px;
+
     box-shadow:0 3px 12px #0001;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
-/* CARDS */
+
+/* ================= CARDS ================= */
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(4,1fr);
+
     gap:15px;
+
     margin-bottom:20px;
 }
 
 .card{
+
     background:white;
+
     padding:22px;
+
     border-radius:15px;
+
     box-shadow:0 4px 15px #0001;
+
     cursor:pointer;
+
+    transition:0.2s;
 }
 
 .card:hover{
+
     transform:translateY(-2px);
 }
 
 .card h3{
+
     color:#a85d00;
+
     margin-bottom:10px;
 }
 
 .card strong{
+
     font-size:28px;
 }
 
-/* SECTIONS */
+
+/* ================= SECTIONS ================= */
 
 .section{
+
     display:none;
+
     background:white;
+
     padding:20px;
+
     border-radius:15px;
+
     box-shadow:0 4px 15px #0001;
+
     margin-bottom:20px;
 }
 
 .section.active{
+
     display:block;
 }
 
-/* TABLE */
+
+/* ================= TABLE ================= */
 
 table{
+
     width:100%;
+
     border-collapse:collapse;
+
     margin-top:15px;
 }
 
 th,
 td{
+
     padding:12px;
+
     border-bottom:1px solid #eee;
+
     text-align:left;
 }
 
 th{
+
     background:#fff3cd;
 }
 
-/* STATUS */
+
+/* ================= STATUS ================= */
 
 .badge{
+
     padding:6px 10px;
+
     border-radius:20px;
+
     font-size:12px;
+
     font-weight:bold;
 }
 
 .completed{
+
     background:#dcfce7;
+
     color:#166534;
 }
 
 .pending{
+
     background:#fef3c7;
+
     color:#92400e;
 }
 
 .processing{
+
     background:#dbeafe;
+
     color:#1e40af;
 }
 
-/* MODAL */
+
+/* ================= MODAL ================= */
 
 .modal{
+
     display:none;
+
     position:fixed;
+
     inset:0;
+
     background:#0008;
+
     align-items:center;
+
     justify-content:center;
+
     padding:20px;
 }
 
 .modal-box{
+
     background:white;
+
     max-width:600px;
+
     width:100%;
+
     max-height:90vh;
+
     overflow:auto;
+
     padding:25px;
+
     border-radius:18px;
 }
 
 .close{
+
     float:right;
+
     background:#dc2626;
+
     color:white;
 }
 
-/* REPORT */
+
+/* ================= REPORT ================= */
 
 .report-card{
+
     background:#fff8dc;
+
     padding:15px;
+
     margin:10px 0;
+
     border-radius:12px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
-/* MOBILE */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
     .layout{
+
         flex-direction:column;
     }
 
     .sidebar{
+
         width:100%;
     }
 
     .cards{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+        repeat(2,1fr);
     }
 }
 
 @media(max-width:500px){
 
     .login-box{
+
         margin:30px 15px;
     }
 
     .cards{
+
         grid-template-columns:1fr;
     }
 
     table{
+
         font-size:13px;
     }
 
     th,
     td{
+
         padding:8px;
     }
 
     .topbar{
+
         flex-direction:column;
+
         gap:10px;
+
         align-items:flex-start;
     }
 
     .main{
+
         padding:12px;
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= LOGIN ================= -->
+
+<!-- =====================================================
+LOGIN PAGE
+===================================================== -->
 
 <div id="loginPage">
 
 <header>
+
 Kamala Banana Leaf Export Pvt Ltd
+
 </header>
+
 
 <div class="login-box">
 
+
 <div class="logo">
+
 🍃
+
 </div>
+
 
 <div class="company">
+
 Kamala Banana Leaf Export Pvt Ltd
+
 </div>
 
+
 <label>
+
 Email
+
 </label>
+
 
 <input
 type="email"
@@ -367,13 +560,23 @@ id="email"
 placeholder="Enter company email"
 autocomplete="username">
 
-<div id="emailError" class="error"></div>
+
+<div
+id="emailError"
+class="error">
+</div>
+
 
 <label>
+
 Password
+
 </label>
 
-<div style="position:relative;">
+
+<div
+style="position:relative;">
+
 
 <input
 type="password"
@@ -381,18 +584,30 @@ id="password"
 placeholder="Enter password"
 autocomplete="current-password">
 
+
 <button
 type="button"
 onclick="togglePassword()"
-style="position:absolute;right:5px;top:5px;background:none;">
+style="
+position:absolute;
+right:5px;
+top:5px;
+background:none;
+">
 
 👁️
 
 </button>
 
+
 </div>
 
-<div id="passwordError" class="error"></div>
+
+<div
+id="passwordError"
+class="error">
+</div>
+
 
 <label>
 
@@ -405,7 +620,10 @@ Remember Me
 
 </label>
 
-<br><br>
+
+<br>
+<br>
+
 
 <button
 class="btn full"
@@ -415,7 +633,10 @@ LOGIN
 
 </button>
 
-<br><br>
+
+<br>
+<br>
+
 
 <button
 class="btn full"
@@ -425,14 +646,19 @@ Forgot Password?
 
 </button>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- ================= APP ================= -->
+
+
+<!-- =====================================================
+APP
+===================================================== -->
 
 <div id="app">
+
 
 <div class="layout">
 
@@ -441,161 +667,287 @@ Forgot Password?
 
 <div class="sidebar">
 
+
 <h2>
+
 🍃 KBL
+
 </h2>
 
-<button onclick="showSection('dashboard')">
+
+<button
+onclick="showSection('dashboard')">
+
 🏠 Dashboard
+
 </button>
 
-<button onclick="showSection('orders')">
+
+<button
+onclick="showSection('orders')">
+
 📦 Orders
+
 </button>
 
-<button onclick="showSection('products')">
+
+<button
+onclick="showSection('products')">
+
 🌿 Products
+
 </button>
 
-<button onclick="showSection('employees')">
+
+<button
+onclick="showSection('employees')">
+
 👨‍💼 Employees
+
 </button>
 
-<button onclick="showSection('reports')">
+
+<button
+onclick="showSection('reports')">
+
 📊 Reports
+
 </button>
 
-<button onclick="showSection('profile')">
+
+<button
+onclick="showSection('profile')">
+
 👤 Profile
+
 </button>
 
-<button onclick="showSection('settings')">
+
+<button
+onclick="showSection('settings')">
+
 ⚙️ Settings
+
 </button>
 
-<button onclick="logout()">
+
+<button
+onclick="logout()">
+
 🚪 Logout
+
 </button>
+
 
 </div>
+
 
 
 <!-- MAIN -->
 
 <div class="main">
 
+
 <div class="topbar">
 
+
 <h2 id="pageTitle">
+
 Dashboard
+
 </h2>
 
+
 <div>
+
 👤 Admin
-</div>
 
 </div>
 
 
-<!-- ================= DASHBOARD ================= -->
+</div>
 
-<div id="dashboard" class="section active">
+
+
+<!-- =====================================================
+DASHBOARD
+===================================================== -->
+
+<div
+id="dashboard"
+class="section active">
+
 
 <div class="cards">
+
 
 <div
 class="card"
 onclick="showSection('orders')">
 
+
 <h3>
+
 Total Orders
+
 </h3>
 
-<strong id="totalOrders">
+
+<strong
+id="totalOrders">
+
 0
+
 </strong>
 
+
 </div>
+
+
 
 <div
 class="card"
 onclick="showSection('products')">
 
+
 <h3>
+
 Total Products
+
 </h3>
 
-<strong id="totalProducts">
+
+<strong
+id="totalProducts">
+
 0
+
 </strong>
 
+
 </div>
+
+
 
 <div
 class="card"
 onclick="showSection('employees')">
 
+
 <h3>
+
 Employees
+
 </h3>
 
-<strong id="totalEmployees">
+
+<strong
+id="totalEmployees">
+
 0
+
 </strong>
 
+
 </div>
+
+
 
 <div
 class="card"
 onclick="showSection('reports')">
 
+
 <h3>
+
 Total Sales
+
 </h3>
 
-<strong id="totalSales">
+
+<strong
+id="totalSales">
+
 ₹0
+
 </strong>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 <h3>
+
 Recent Orders
+
 </h3>
 
+
 <table>
+
 
 <thead>
 
 <tr>
-<th>Order ID</th>
-<th>Customer</th>
-<th>Product</th>
-<th>Amount</th>
-<th>Status</th>
+
+<th>
+Order ID
+</th>
+
+<th>
+Customer
+</th>
+
+<th>
+Product
+</th>
+
+<th>
+Amount
+</th>
+
+<th>
+Status
+</th>
+
 </tr>
 
 </thead>
 
-<tbody id="dashboardOrders">
+
+<tbody
+id="dashboardOrders">
 </tbody>
 
+
 </table>
+
 
 </div>
 
 
-<!-- ================= ORDERS ================= -->
 
-<div id="orders" class="section">
+<!-- =====================================================
+ORDERS
+===================================================== -->
+
+<div
+id="orders"
+class="section">
+
 
 <h2>
+
 📦 Orders
+
 </h2>
 
+
 <br>
+
 
 <button
 class="btn"
@@ -605,41 +957,77 @@ onclick="addDemoOrder()">
 
 </button>
 
+
 <table>
+
 
 <thead>
 
 <tr>
 
-<th>Order ID</th>
-<th>Customer</th>
-<th>Product</th>
-<th>Qty</th>
-<th>Amount</th>
-<th>Status</th>
-<th>Action</th>
+<th>
+Order ID
+</th>
+
+<th>
+Customer
+</th>
+
+<th>
+Product
+</th>
+
+<th>
+Qty
+</th>
+
+<th>
+Amount
+</th>
+
+<th>
+Status
+</th>
+
+<th>
+Action
+</th>
 
 </tr>
 
 </thead>
 
-<tbody id="ordersTable">
+
+<tbody
+id="ordersTable">
 </tbody>
 
+
 </table>
+
 
 </div>
 
 
-<!-- ================= PRODUCTS ================= -->
 
-<div id="products" class="section">
+<!-- =====================================================
+PRODUCTS
+===================================================== -->
+
+<div
+id="products"
+class="section">
+
 
 <h2>
+
 🌿 Products
+
 </h2>
 
+
 <br>
+
 
 <button
 class="btn"
@@ -649,70 +1037,125 @@ onclick="addProduct()">
 
 </button>
 
+
 <table>
+
 
 <thead>
 
 <tr>
 
-<th>Product</th>
-<th>Type</th>
-<th>Stock</th>
-<th>Price</th>
+<th>
+Product
+</th>
+
+<th>
+Type
+</th>
+
+<th>
+Stock
+</th>
+
+<th>
+Price
+</th>
 
 </tr>
 
 </thead>
 
-<tbody id="productsTable">
+
+<tbody
+id="productsTable">
 </tbody>
 
+
 </table>
+
 
 </div>
 
 
-<!-- ================= EMPLOYEES ================= -->
 
-<div id="employees" class="section">
+<!-- =====================================================
+EMPLOYEES
+===================================================== -->
+
+<div
+id="employees"
+class="section">
+
 
 <h2>
+
 👨‍💼 Employees
+
 </h2>
 
+
 <table>
+
 
 <thead>
 
 <tr>
 
-<th>ID</th>
-<th>Name</th>
-<th>Department</th>
-<th>Role</th>
-<th>Status</th>
+<th>
+ID
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+Department
+</th>
+
+<th>
+Role
+</th>
+
+<th>
+Status
+</th>
 
 </tr>
 
 </thead>
 
-<tbody id="employeesTable">
+
+<tbody
+id="employeesTable">
 </tbody>
 
+
 </table>
+
 
 </div>
 
 
-<!-- ================= REPORTS ================= -->
 
-<div id="reports" class="section">
+<!-- =====================================================
+REPORTS
+===================================================== -->
+
+<div
+id="reports"
+class="section">
+
 
 <h2>
+
 📊 Reports
+
 </h2>
+
 
 <div class="cards">
+
 
 <div class="card">
 
@@ -720,11 +1163,15 @@ onclick="addProduct()">
 Orders
 </h3>
 
-<strong id="reportOrders">
+<strong
+id="reportOrders">
+
 0
+
 </strong>
 
 </div>
+
 
 <div class="card">
 
@@ -732,11 +1179,15 @@ Orders
 Sales
 </h3>
 
-<strong id="reportSales">
+<strong
+id="reportSales">
+
 ₹0
+
 </strong>
 
 </div>
+
 
 <div class="card">
 
@@ -744,11 +1195,15 @@ Sales
 Products
 </h3>
 
-<strong id="reportProducts">
+<strong
+id="reportProducts">
+
 0
+
 </strong>
 
 </div>
+
 
 <div class="card">
 
@@ -756,23 +1211,35 @@ Products
 Employees
 </h3>
 
-<strong id="reportEmployees">
+<strong
+id="reportEmployees">
+
 0
+
 </strong>
 
 </div>
 
+
 </div>
 
+
 <h3>
+
 Admin Report List
+
 </h3>
+
 
 <div class="report-card">
 
+
 <span>
+
 RPT-001 — Sales Report
+
 </span>
+
 
 <button
 class="btn"
@@ -782,13 +1249,20 @@ View
 
 </button>
 
+
 </div>
+
+
 
 <div class="report-card">
 
+
 <span>
+
 RPT-002 — Orders Report
+
 </span>
+
 
 <button
 class="btn"
@@ -798,13 +1272,20 @@ View
 
 </button>
 
+
 </div>
+
+
 
 <div class="report-card">
 
+
 <span>
+
 RPT-003 — Employee Report
+
 </span>
+
 
 <button
 class="btn"
@@ -814,9 +1295,12 @@ View
 
 </button>
 
+
 </div>
 
+
 <br>
+
 
 <button
 class="btn"
@@ -826,6 +1310,7 @@ onclick="downloadCSV()">
 
 </button>
 
+
 <button
 class="btn"
 onclick="downloadExcel()">
@@ -833,6 +1318,7 @@ onclick="downloadExcel()">
 ⬇ Excel
 
 </button>
+
 
 <button
 class="btn"
@@ -842,76 +1328,136 @@ onclick="printReport()">
 
 </button>
 
+
 </div>
 
 
-<!-- ================= PROFILE ================= -->
 
-<div id="profile" class="section">
+<!-- =====================================================
+PROFILE
+===================================================== -->
+
+<div
+id="profile"
+class="section">
+
 
 <h2>
+
 👤 Profile
+
 </h2>
+
 
 <br>
 
+
 <p>
-<b>Company:</b>
+
+<b>
+Company:
+</b>
+
 Kamala Banana Leaf Export Pvt Ltd
+
 </p>
 
+
 <p>
-<b>User:</b>
+
+<b>
+User:
+</b>
+
 Admin
+
 </p>
 
+
 <p>
-<b>Email:</b>
+
+<b>
+Email:
+</b>
+
+<span id="profileEmail">
 admin@kamalabanana.com
+</span>
+
 </p>
 
+
 <p>
-<b>Role:</b>
+
+<b>
+Role:
+</b>
+
 Administrator
+
 </p>
+
 
 </div>
 
 
-<!-- ================= SETTINGS ================= -->
 
-<div id="settings" class="section">
+<!-- =====================================================
+SETTINGS
+===================================================== -->
+
+<div
+id="settings"
+class="section">
+
 
 <h2>
+
 ⚙️ Settings
+
 </h2>
 
+
 <br>
+
 
 <label>
+
 Company Name
+
 </label>
+
 
 <input
 value="Kamala Banana Leaf Export Pvt Ltd">
 
+
 <label>
+
 Currency
+
 </label>
+
 
 <select>
 
 <option>
+
 Indian Rupee ₹
+
 </option>
 
 <option>
+
 US Dollar $
+
 </option>
 
 </select>
 
+
 <br>
+
 
 <button
 class="btn"
@@ -921,18 +1467,29 @@ Save Settings
 
 </button>
 
-</div>
 
-</div>
-</div>
 </div>
 
 
-<!-- ================= ORDER MODAL ================= -->
+</div>
 
-<div id="orderModal" class="modal">
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+ORDER MODAL
+===================================================== -->
+
+<div
+id="orderModal"
+class="modal">
+
 
 <div class="modal-box">
+
 
 <button
 class="close"
@@ -942,23 +1499,36 @@ X
 
 </button>
 
+
 <h2>
+
 📦 Order Details
+
 </h2>
 
-<div id="orderDetails">
+
+<div
+id="orderDetails">
+</div>
+
+
 </div>
 
 </div>
 
-</div>
 
 
-<!-- ================= REPORT MODAL ================= -->
+<!-- =====================================================
+REPORT MODAL
+===================================================== -->
 
-<div id="reportModal" class="modal">
+<div
+id="reportModal"
+class="modal">
+
 
 <div class="modal-box">
+
 
 <button
 class="close"
@@ -968,22 +1538,33 @@ X
 
 </button>
 
-<h2 id="reportTitle">
+
+<h2
+id="reportTitle">
 </h2>
+
 
 <br>
 
-<div id="reportContent">
+
+<div
+id="reportContent">
 </div>
+
 
 </div>
 
 </div>
+
 
 
 <script>
 
-/* ================= DATA ================= */
+
+/* =====================================================
+DATA
+===================================================== */
+
 
 let orders =
 JSON.parse(
@@ -1090,1050 +1671,1409 @@ status:"Active"
 ];
 
 
-/* ================= PASSWORD ================= */
+
+/* =====================================================
+PASSWORD
+===================================================== */
 
 function togglePassword(){
 
-let password =
-document.getElementById("password");
+    let password =
+        document.getElementById("password");
 
-password.type =
-password.type === "password"
-? "text"
-: "password";
-
+    password.type =
+        password.type === "password"
+        ? "text"
+        : "password";
 }
 
 
-/* ================= LOGIN ================= */
+
+/* =====================================================
+LOGIN
+===================================================== */
 
 function login(){
 
-let email =
-document.getElementById("email")
-.value
-.trim();
-
-let password =
-document.getElementById("password")
-.value
-.trim();
-
-let remember =
-document.getElementById("remember")
-.checked;
-
-document.getElementById("emailError")
-.innerText="";
-
-document.getElementById("passwordError")
-.innerText="";
-
-let valid=true;
+    let email =
+        document.getElementById("email")
+        .value
+        .trim();
 
 
-/* EMAIL VALIDATION */
+    let password =
+        document.getElementById("password")
+        .value
+        .trim();
 
-if(
-!email ||
-!email.includes("@") ||
-!email.includes(".")
-){
 
-document.getElementById("emailError")
-.innerText=
-"Please enter a valid company email address";
+    document.getElementById("emailError")
+        .innerText = "";
 
-valid=false;
+
+    document.getElementById("passwordError")
+        .innerText = "";
+
+
+    let valid = true;
+
+
+
+    /* EMAIL */
+
+    if(
+        !email ||
+        !email.includes("@") ||
+        !email.includes(".")
+    ){
+
+        document.getElementById("emailError")
+            .innerText =
+            "Please enter a valid company email address";
+
+        valid = false;
+    }
+
+
+
+    /* PASSWORD */
+
+    if(!password){
+
+        document.getElementById("passwordError")
+            .innerText =
+            "Password is required";
+
+        valid = false;
+    }
+
+
+
+    if(!valid){
+
+        return;
+    }
+
+
+
+    /*
+    ====================================================
+    IMPORTANT LOGIN STORAGE
+    ====================================================
+
+    Login status is ALWAYS saved in localStorage.
+
+    Therefore:
+
+    Refresh = stays logged in
+    Close browser = stays logged in
+    Reopen PWA = stays logged in
+
+    Only Logout removes it.
+    ====================================================
+    */
+
+
+    localStorage.setItem(
+        "kamalaLogin",
+        "true"
+    );
+
+
+    localStorage.setItem(
+        "kamalaUserEmail",
+        email
+    );
+
+
+    openDashboard();
 
 }
 
 
-/* PASSWORD VALIDATION */
 
-if(!password){
-
-document.getElementById("passwordError")
-.innerText=
-"Password is required";
-
-valid=false;
-
-}
-
-if(!valid){
-
-return;
-
-}
-
-
-/* LOGIN SESSION */
-
-if(remember){
-
-localStorage.setItem(
-"kamalaLogin",
-"true"
-);
-
-sessionStorage.removeItem(
-"kamalaLogin"
-);
-
-}else{
-
-sessionStorage.setItem(
-"kamalaLogin",
-"true"
-);
-
-localStorage.removeItem(
-"kamalaLogin"
-);
-
-}
-
-
-/* OPEN APP */
-
-openDashboard();
-
-}
-
-
-/* ================= OPEN DASHBOARD ================= */
+/* =====================================================
+OPEN DASHBOARD
+===================================================== */
 
 function openDashboard(){
 
-document.getElementById("loginPage")
-.style.display="none";
+    document.getElementById("loginPage")
+        .style.display = "none";
 
-document.getElementById("app")
-.style.display="block";
 
-renderAll();
+    document.getElementById("app")
+        .style.display = "block";
 
-showSection("dashboard");
+
+    renderAll();
+
+
+    showSection("dashboard");
+
+
+
+    /* UPDATE PROFILE EMAIL */
+
+    let savedEmail =
+        localStorage.getItem(
+            "kamalaUserEmail"
+        );
+
+
+    if(savedEmail){
+
+        document.getElementById("profileEmail")
+            .innerText =
+            savedEmail;
+    }
 
 }
 
 
-/* ================= AUTO LOGIN ================= */
+
+/* =====================================================
+AUTO LOGIN
+===================================================== */
 
 window.addEventListener(
-"DOMContentLoaded",
-function(){
+    "DOMContentLoaded",
+    function(){
 
-let loggedIn =
-localStorage.getItem("kamalaLogin")
-=== "true"
-||
-sessionStorage.getItem("kamalaLogin")
-=== "true";
+        /*
+        ==================================================
+        CHECK LOCAL STORAGE
+        ==================================================
+        */
+
+        let loggedIn =
+            localStorage.getItem(
+                "kamalaLogin"
+            ) === "true";
 
 
-if(loggedIn){
 
-openDashboard();
+        if(loggedIn){
 
-}else{
+            /*
+            Restore saved email
+            */
 
-document.getElementById("loginPage")
-.style.display="block";
+            let savedEmail =
+                localStorage.getItem(
+                    "kamalaUserEmail"
+                );
 
-document.getElementById("app")
-.style.display="none";
 
-}
+            if(savedEmail){
 
-}
+                document.getElementById("email")
+                    .value =
+                    savedEmail;
+            }
+
+
+            openDashboard();
+
+        }
+
+
+        else{
+
+            document.getElementById("loginPage")
+                .style.display =
+                "block";
+
+
+            document.getElementById("app")
+                .style.display =
+                "none";
+
+        }
+
+    }
 );
 
 
-/* ================= LOGOUT ================= */
+
+/* =====================================================
+LOGOUT
+===================================================== */
 
 function logout(){
 
-localStorage.removeItem(
-"kamalaLogin"
-);
+    /*
+    ONLY LOGOUT BUTTON
+    REMOVES LOGIN STATUS
+    */
 
-sessionStorage.removeItem(
-"kamalaLogin"
-);
 
-document.getElementById("app")
-.style.display="none";
+    localStorage.removeItem(
+        "kamalaLogin"
+    );
 
-document.getElementById("loginPage")
-.style.display="block";
 
-document.getElementById("email")
-.value="";
+    localStorage.removeItem(
+        "kamalaUserEmail"
+    );
 
-document.getElementById("password")
-.value="";
 
-document.getElementById("remember")
-.checked=false;
+    sessionStorage.removeItem(
+        "kamalaLogin"
+    );
+
+
+    document.getElementById("app")
+        .style.display =
+        "none";
+
+
+    document.getElementById("loginPage")
+        .style.display =
+        "block";
+
+
+    document.getElementById("email")
+        .value = "";
+
+
+    document.getElementById("password")
+        .value = "";
+
+
+    document.getElementById("remember")
+        .checked = false;
 
 }
 
 
-/* ================= FORGOT PASSWORD ================= */
+
+/* =====================================================
+FORGOT PASSWORD
+===================================================== */
 
 function forgotPassword(){
 
-alert(
-"Password reset link demo sent to your email."
-);
+    alert(
+        "Password reset link demo sent to your email."
+    );
 
 }
 
 
-/* ================= NAVIGATION ================= */
+
+/* =====================================================
+NAVIGATION
+===================================================== */
 
 function showSection(id){
 
-document
-.querySelectorAll(".section")
-.forEach(
-section=>{
-section.classList.remove("active");
+    document
+        .querySelectorAll(".section")
+        .forEach(
+            section => {
+
+                section.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+
+
+    let names = {
+
+        dashboard:"Dashboard",
+
+        orders:"Orders",
+
+        products:"Products",
+
+        employees:"Employees",
+
+        reports:"Reports",
+
+        profile:"Profile",
+
+        settings:"Settings"
+
+    };
+
+
+    document.getElementById("pageTitle")
+        .innerText =
+        names[id];
+
 }
-);
-
-document
-.getElementById(id)
-.classList.add("active");
 
 
-let names={
 
-dashboard:"Dashboard",
-orders:"Orders",
-products:"Products",
-employees:"Employees",
-reports:"Reports",
-profile:"Profile",
-settings:"Settings"
-
-};
-
-
-document.getElementById("pageTitle")
-.innerText=names[id];
-
-}
-
-
-/* ================= STATUS ================= */
+/* =====================================================
+STATUS BADGE
+===================================================== */
 
 function statusBadge(status){
 
-let cls =
-status.toLowerCase();
+    let cls =
+        status.toLowerCase();
 
-return `
-<span class="badge ${cls}">
-${status}
-</span>
-`;
+
+    return `
+
+        <span class="badge ${cls}">
+
+            ${status}
+
+        </span>
+
+    `;
 
 }
 
 
-/* ================= RENDER ================= */
+
+/* =====================================================
+RENDER ALL
+===================================================== */
 
 function renderAll(){
 
-/* DASHBOARD COUNTS */
 
-document.getElementById("totalOrders")
-.innerText=orders.length;
+    /* DASHBOARD COUNTS */
 
-document.getElementById("totalProducts")
-.innerText=products.length;
+    document.getElementById("totalOrders")
+        .innerText =
+        orders.length;
 
-document.getElementById("totalEmployees")
-.innerText=employees.length;
 
+    document.getElementById("totalProducts")
+        .innerText =
+        products.length;
 
-let sales =
-orders.reduce(
-(sum,o)=>sum+Number(o.amount),
-0
-);
 
+    document.getElementById("totalEmployees")
+        .innerText =
+        employees.length;
 
-document.getElementById("totalSales")
-.innerText=
-"₹"+
-sales.toLocaleString("en-IN");
 
 
-/* REPORT COUNTS */
+    /* TOTAL SALES */
 
-document.getElementById("reportOrders")
-.innerText=orders.length;
+    let sales =
+        orders.reduce(
+            (sum,o) =>
+            sum + Number(o.amount),
+            0
+        );
 
-document.getElementById("reportProducts")
-.innerText=products.length;
 
-document.getElementById("reportEmployees")
-.innerText=employees.length;
+    document.getElementById("totalSales")
+        .innerText =
+        "₹" +
+        sales.toLocaleString("en-IN");
 
-document.getElementById("reportSales")
-.innerText=
-"₹"+
-sales.toLocaleString("en-IN");
 
 
-/* DASHBOARD ORDERS */
+    /* REPORT COUNTS */
 
-document.getElementById("dashboardOrders")
-.innerHTML=
+    document.getElementById("reportOrders")
+        .innerText =
+        orders.length;
 
-orders
-.slice(0,5)
-.map(
-o=>`
 
-<tr>
+    document.getElementById("reportProducts")
+        .innerText =
+        products.length;
 
-<td>${o.id}</td>
 
-<td>${o.customer}</td>
+    document.getElementById("reportEmployees")
+        .innerText =
+        employees.length;
 
-<td>${o.product}</td>
 
-<td>
-₹${Number(o.amount)
-.toLocaleString("en-IN")}
-</td>
+    document.getElementById("reportSales")
+        .innerText =
+        "₹" +
+        sales.toLocaleString("en-IN");
 
-<td>
-${statusBadge(o.status)}
-</td>
 
-</tr>
 
-`
-)
-.join("");
+    /* DASHBOARD ORDERS */
 
+    document.getElementById("dashboardOrders")
+        .innerHTML =
 
-/* ORDERS */
+        orders
+        .slice(0,5)
+        .map(
+            o => `
 
-document.getElementById("ordersTable")
-.innerHTML=
+            <tr>
 
-orders
-.map(
-(o,i)=>`
+                <td>
+                    ${o.id}
+                </td>
 
-<tr>
+                <td>
+                    ${o.customer}
+                </td>
 
-<td>${o.id}</td>
+                <td>
+                    ${o.product}
+                </td>
 
-<td>${o.customer}</td>
+                <td>
+                    ₹${Number(o.amount)
+                    .toLocaleString("en-IN")}
+                </td>
 
-<td>${o.product}</td>
+                <td>
+                    ${statusBadge(o.status)}
+                </td>
 
-<td>${o.qty}</td>
+            </tr>
 
-<td>
-₹${Number(o.amount)
-.toLocaleString("en-IN")}
-</td>
+            `
+        )
+        .join("");
 
-<td>
-${statusBadge(o.status)}
-</td>
 
-<td>
 
-<button
-class="btn"
-onclick="viewOrder(${i})">
+    /* ORDERS */
 
-View
+    document.getElementById("ordersTable")
+        .innerHTML =
 
-</button>
+        orders
+        .map(
+            (o,i) => `
 
-</td>
+            <tr>
 
-</tr>
+                <td>
+                    ${o.id}
+                </td>
 
-`
-)
-.join("");
+                <td>
+                    ${o.customer}
+                </td>
 
+                <td>
+                    ${o.product}
+                </td>
 
-/* PRODUCTS */
+                <td>
+                    ${o.qty}
+                </td>
 
-document.getElementById("productsTable")
-.innerHTML=
+                <td>
+                    ₹${Number(o.amount)
+                    .toLocaleString("en-IN")}
+                </td>
 
-products
-.map(
-p=>`
+                <td>
+                    ${statusBadge(o.status)}
+                </td>
 
-<tr>
+                <td>
 
-<td>${p.name}</td>
+                    <button
+                    class="btn"
+                    onclick="viewOrder(${i})">
 
-<td>${p.type}</td>
+                    View
 
-<td>${p.stock}</td>
+                    </button>
 
-<td>₹${p.price}</td>
+                </td>
 
-</tr>
+            </tr>
 
-`
-)
-.join("");
+            `
+        )
+        .join("");
 
 
-/* EMPLOYEES */
 
-document.getElementById("employeesTable")
-.innerHTML=
+    /* PRODUCTS */
 
-employees
-.map(
-e=>`
+    document.getElementById("productsTable")
+        .innerHTML =
 
-<tr>
+        products
+        .map(
+            p => `
 
-<td>${e.id}</td>
+            <tr>
 
-<td>${e.name}</td>
+                <td>
+                    ${p.name}
+                </td>
 
-<td>${e.department}</td>
+                <td>
+                    ${p.type}
+                </td>
 
-<td>${e.role}</td>
+                <td>
+                    ${p.stock}
+                </td>
 
-<td>${e.status}</td>
+                <td>
+                    ₹${p.price}
+                </td>
 
-</tr>
+            </tr>
 
-`
-)
-.join("");
+            `
+        )
+        .join("");
+
+
+
+    /* EMPLOYEES */
+
+    document.getElementById("employeesTable")
+        .innerHTML =
+
+        employees
+        .map(
+            e => `
+
+            <tr>
+
+                <td>
+                    ${e.id}
+                </td>
+
+                <td>
+                    ${e.name}
+                </td>
+
+                <td>
+                    ${e.department}
+                </td>
+
+                <td>
+                    ${e.role}
+                </td>
+
+                <td>
+                    ${e.status}
+                </td>
+
+            </tr>
+
+            `
+        )
+        .join("");
 
 }
 
 
-/* ================= VIEW ORDER ================= */
+
+/* =====================================================
+VIEW ORDER
+===================================================== */
 
 function viewOrder(index){
 
-let o=orders[index];
+    let o =
+        orders[index];
 
-document.getElementById("orderDetails")
-.innerHTML=`
 
-<p>
-<b>Order ID:</b>
-${o.id}
-</p>
+    document.getElementById("orderDetails")
+        .innerHTML = `
 
-<p>
-<b>Customer:</b>
-${o.customer}
-</p>
+        <p>
+        <b>Order ID:</b>
+        ${o.id}
+        </p>
 
-<p>
-<b>Product:</b>
-${o.product}
-</p>
+        <p>
+        <b>Customer:</b>
+        ${o.customer}
+        </p>
 
-<p>
-<b>Quantity:</b>
-${o.qty}
-</p>
+        <p>
+        <b>Product:</b>
+        ${o.product}
+        </p>
 
-<p>
-<b>Amount:</b>
-₹${Number(o.amount)
-.toLocaleString("en-IN")}
-</p>
+        <p>
+        <b>Quantity:</b>
+        ${o.qty}
+        </p>
 
-<p>
-<b>Status:</b>
-${statusBadge(o.status)}
-</p>
+        <p>
+        <b>Amount:</b>
+        ₹${Number(o.amount)
+        .toLocaleString("en-IN")}
+        </p>
 
-`;
+        <p>
+        <b>Status:</b>
+        ${statusBadge(o.status)}
+        </p>
 
-document.getElementById("orderModal")
-.style.display="flex";
+        `;
+
+
+    document.getElementById("orderModal")
+        .style.display =
+        "flex";
 
 }
 
 
-/* ================= CLOSE MODAL ================= */
+
+/* =====================================================
+CLOSE MODAL
+===================================================== */
 
 function closeModal(id){
 
-document.getElementById(id)
-.style.display="none";
+    document.getElementById(id)
+        .style.display =
+        "none";
 
 }
 
 
-/* ================= ADD ORDER ================= */
+
+/* =====================================================
+ADD DEMO ORDER
+===================================================== */
 
 function addDemoOrder(){
 
-let number =
-orders.length+1;
+    let number =
+        orders.length + 1;
 
-orders.push({
 
-id:
-"ORD"+
-String(number)
-.padStart(3,"0"),
+    orders.push({
 
-customer:
-"New Customer",
+        id:
+        "ORD" +
+        String(number)
+        .padStart(3,"0"),
 
-product:
-"Premium Banana Leaf",
+        customer:
+        "New Customer",
 
-qty:100,
+        product:
+        "Premium Banana Leaf",
 
-amount:12000,
+        qty:100,
 
-status:"Pending"
+        amount:12000,
 
-});
+        status:
+        "Pending"
 
-saveData();
+    });
 
-renderAll();
 
-alert(
-"New demo order added successfully."
-);
+    saveData();
+
+
+    renderAll();
+
+
+    alert(
+        "New demo order added successfully."
+    );
 
 }
 
 
-/* ================= ADD PRODUCT ================= */
+
+/* =====================================================
+ADD PRODUCT
+===================================================== */
 
 function addProduct(){
 
-let name =
-prompt("Product Name:");
+    let name =
+        prompt("Product Name:");
 
-if(!name){
 
-return;
+    if(!name){
+
+        return;
+    }
+
+
+    let type =
+        prompt(
+            "Type: Export / Domestic",
+            "Export"
+        );
+
+
+    let stock =
+        prompt(
+            "Stock",
+            "500"
+        );
+
+
+    let price =
+        prompt(
+            "Price",
+            "100"
+        );
+
+
+    products.push({
+
+        name:name,
+
+        type:type,
+
+        stock:Number(stock),
+
+        price:Number(price)
+
+    });
+
+
+    saveData();
+
+
+    renderAll();
 
 }
 
-let type =
-prompt(
-"Type: Export / Domestic",
-"Export"
-);
-
-let stock =
-prompt(
-"Stock",
-"500"
-);
-
-let price =
-prompt(
-"Price",
-"100"
-);
-
-products.push({
-
-name:name,
-
-type:type,
-
-stock:Number(stock),
-
-price:Number(price)
-
-});
-
-saveData();
-
-renderAll();
-
-}
 
 
-/* ================= VIEW REPORT ================= */
+/* =====================================================
+VIEW REPORT
+===================================================== */
 
 function viewReport(title){
 
-document.getElementById("reportTitle")
-.innerText=title;
+    document.getElementById("reportTitle")
+        .innerText =
+        title;
 
-let html="";
+
+    let html = "";
 
 
-/* SALES REPORT */
 
-if(title==="Sales Report"){
+    /* SALES REPORT */
 
-let total =
-orders.reduce(
-(s,o)=>s+Number(o.amount),
-0
-);
+    if(title === "Sales Report"){
 
-html=`
+        let total =
+            orders.reduce(
+                (s,o) =>
+                s + Number(o.amount),
+                0
+            );
 
-<h3>
-Total Sales
-</h3>
 
-<p
-style="
-font-size:28px;
-font-weight:bold;
-color:#a85d00;
-margin-top:15px;
-">
+        html = `
 
-₹${total.toLocaleString("en-IN")}
+        <h3>
+        Total Sales
+        </h3>
 
-</p>
+        <p
+        style="
+        font-size:28px;
+        font-weight:bold;
+        color:#a85d00;
+        margin-top:15px;
+        ">
 
-`;
+        ₹${total.toLocaleString("en-IN")}
+
+        </p>
+
+        `;
+
+    }
+
+
+
+    /* ORDERS REPORT */
+
+    else if(title === "Orders Report"){
+
+        html = `
+
+        <table>
+
+        <tr>
+
+        <th>
+        Order
+        </th>
+
+        <th>
+        Customer
+        </th>
+
+        <th>
+        Amount
+        </th>
+
+        <th>
+        Status
+        </th>
+
+        </tr>
+
+
+        ${
+            orders
+            .map(
+                o => `
+
+                <tr>
+
+                <td>
+                ${o.id}
+                </td>
+
+                <td>
+                ${o.customer}
+                </td>
+
+                <td>
+                ₹${Number(o.amount)
+                .toLocaleString("en-IN")}
+                </td>
+
+                <td>
+                ${o.status}
+                </td>
+
+                </tr>
+
+                `
+            )
+            .join("")
+        }
+
+
+        </table>
+
+        `;
+
+    }
+
+
+
+    /* EMPLOYEE REPORT */
+
+    else{
+
+        html = `
+
+        <table>
+
+        <tr>
+
+        <th>
+        ID
+        </th>
+
+        <th>
+        Name
+        </th>
+
+        <th>
+        Department
+        </th>
+
+        <th>
+        Role
+        </th>
+
+        </tr>
+
+
+        ${
+            employees
+            .map(
+                e => `
+
+                <tr>
+
+                <td>
+                ${e.id}
+                </td>
+
+                <td>
+                ${e.name}
+                </td>
+
+                <td>
+                ${e.department}
+                </td>
+
+                <td>
+                ${e.role}
+                </td>
+
+                </tr>
+
+                `
+            )
+            .join("")
+        }
+
+
+        </table>
+
+        `;
+
+    }
+
+
+    document.getElementById("reportContent")
+        .innerHTML =
+        html;
+
+
+    document.getElementById("reportModal")
+        .style.display =
+        "flex";
 
 }
 
 
-/* ORDERS REPORT */
 
-else if(title==="Orders Report"){
-
-html=`
-
-<table>
-
-<tr>
-
-<th>Order</th>
-<th>Customer</th>
-<th>Amount</th>
-<th>Status</th>
-
-</tr>
-
-${
-orders
-.map(
-o=>`
-
-<tr>
-
-<td>${o.id}</td>
-
-<td>${o.customer}</td>
-
-<td>
-₹${Number(o.amount)
-.toLocaleString("en-IN")}
-</td>
-
-<td>${o.status}</td>
-
-</tr>
-
-`
-)
-.join("")
-}
-
-</table>
-
-`;
-
-}
-
-
-/* EMPLOYEE REPORT */
-
-else{
-
-html=`
-
-<table>
-
-<tr>
-
-<th>ID</th>
-<th>Name</th>
-<th>Department</th>
-<th>Role</th>
-
-</tr>
-
-${
-employees
-.map(
-e=>`
-
-<tr>
-
-<td>${e.id}</td>
-
-<td>${e.name}</td>
-
-<td>${e.department}</td>
-
-<td>${e.role}</td>
-
-</tr>
-
-`
-)
-.join("")
-}
-
-</table>
-
-`;
-
-}
-
-
-document.getElementById("reportContent")
-.innerHTML=html;
-
-document.getElementById("reportModal")
-.style.display="flex";
-
-}
-
-
-/* ================= CSV ================= */
+/* =====================================================
+CSV
+===================================================== */
 
 function downloadCSV(){
 
-let csv =
-"Order ID,Customer,Product,Quantity,Amount,Status\n";
+    let csv =
+        "Order ID,Customer,Product,Quantity,Amount,Status\n";
 
 
-orders.forEach(
-o=>{
+    orders.forEach(
+        o => {
 
-csv +=
-`${o.id},${o.customer},${o.product},${o.qty},${o.amount},${o.status}\n`;
+            csv +=
+                `${o.id},${o.customer},${o.product},${o.qty},${o.amount},${o.status}\n`;
+
+        }
+    );
+
+
+    let blob =
+        new Blob(
+            [csv],
+            {
+                type:"text/csv"
+            }
+        );
+
+
+    let url =
+        URL.createObjectURL(blob);
+
+
+    let a =
+        document.createElement("a");
+
+
+    a.href = url;
+
+
+    a.download =
+        "Kamala_Banana_Orders.csv";
+
+
+    a.click();
+
+
+    URL.revokeObjectURL(url);
 
 }
-);
 
 
-let blob =
-new Blob(
-[csv],
-{type:"text/csv"}
-);
 
-
-let url =
-URL.createObjectURL(blob);
-
-
-let a =
-document.createElement("a");
-
-a.href=url;
-
-a.download=
-"Kamala_Banana_Orders.csv";
-
-a.click();
-
-URL.revokeObjectURL(url);
-
-}
-
-
-/* ================= EXCEL ================= */
+/* =====================================================
+EXCEL
+===================================================== */
 
 function downloadExcel(){
 
-let table=`
+    let table = `
 
-<table border="1">
+    <table border="1">
 
-<tr>
+    <tr>
 
-<th>Order ID</th>
-<th>Customer</th>
-<th>Product</th>
-<th>Quantity</th>
-<th>Amount</th>
-<th>Status</th>
+    <th>
+    Order ID
+    </th>
 
-</tr>
+    <th>
+    Customer
+    </th>
 
-${
-orders
-.map(
-o=>`
+    <th>
+    Product
+    </th>
 
-<tr>
+    <th>
+    Quantity
+    </th>
 
-<td>${o.id}</td>
+    <th>
+    Amount
+    </th>
 
-<td>${o.customer}</td>
+    <th>
+    Status
+    </th>
 
-<td>${o.product}</td>
+    </tr>
 
-<td>${o.qty}</td>
 
-<td>${o.amount}</td>
+    ${
+        orders
+        .map(
+            o => `
 
-<td>${o.status}</td>
+            <tr>
 
-</tr>
+            <td>
+            ${o.id}
+            </td>
 
-`
-)
-.join("")
+            <td>
+            ${o.customer}
+            </td>
+
+            <td>
+            ${o.product}
+            </td>
+
+            <td>
+            ${o.qty}
+            </td>
+
+            <td>
+            ${o.amount}
+            </td>
+
+            <td>
+            ${o.status}
+            </td>
+
+            </tr>
+
+            `
+        )
+        .join("")
+    }
+
+
+    </table>
+
+    `;
+
+
+    let blob =
+        new Blob(
+            [table],
+            {
+                type:
+                "application/vnd.ms-excel"
+            }
+        );
+
+
+    let url =
+        URL.createObjectURL(blob);
+
+
+    let a =
+        document.createElement("a");
+
+
+    a.href = url;
+
+
+    a.download =
+        "Kamala_Banana_Orders.xls";
+
+
+    a.click();
+
+
+    URL.revokeObjectURL(url);
+
 }
 
-</table>
-
-`;
 
 
-let blob =
-new Blob(
-[table],
-{
-type:"application/vnd.ms-excel"
-}
-);
-
-
-let url =
-URL.createObjectURL(blob);
-
-
-let a =
-document.createElement("a");
-
-a.href=url;
-
-a.download=
-"Kamala_Banana_Orders.xls";
-
-a.click();
-
-URL.revokeObjectURL(url);
-
-}
-
-
-/* ================= PRINT / PDF ================= */
+/* =====================================================
+PRINT / PDF
+===================================================== */
 
 function printReport(){
 
-let total =
-orders.reduce(
-(s,o)=>s+Number(o.amount),
-0
-);
+    let total =
+        orders.reduce(
+            (s,o) =>
+            s + Number(o.amount),
+            0
+        );
 
 
-let html=`
+    let html = `
 
-<html>
+    <html>
 
-<head>
+    <head>
 
-<title>
-Kamala Banana Report
-</title>
+    <title>
+    Kamala Banana Report
+    </title>
 
-<style>
 
-body{
-font-family:Arial;
-padding:30px;
+    <style>
+
+    body{
+        font-family:Arial;
+        padding:30px;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+    }
+
+    th,
+    td{
+        border:1px solid #999;
+        padding:8px;
+    }
+
+    th{
+        background:#facc15;
+    }
+
+    </style>
+
+    </head>
+
+
+    <body>
+
+
+    <h1>
+    Kamala Banana Leaf Export Pvt Ltd
+    </h1>
+
+
+    <h2>
+    Orders Report
+    </h2>
+
+
+    <p>
+    Total Orders:
+    ${orders.length}
+    </p>
+
+
+    <p>
+    Total Sales:
+    ₹${total.toLocaleString("en-IN")}
+    </p>
+
+
+    <table>
+
+
+    <tr>
+
+    <th>
+    Order ID
+    </th>
+
+    <th>
+    Customer
+    </th>
+
+    <th>
+    Product
+    </th>
+
+    <th>
+    Amount
+    </th>
+
+    <th>
+    Status
+    </th>
+
+    </tr>
+
+
+    ${
+        orders
+        .map(
+            o => `
+
+            <tr>
+
+            <td>
+            ${o.id}
+            </td>
+
+            <td>
+            ${o.customer}
+            </td>
+
+            <td>
+            ${o.product}
+            </td>
+
+            <td>
+            ₹${o.amount}
+            </td>
+
+            <td>
+            ${o.status}
+            </td>
+
+            </tr>
+
+            `
+        )
+        .join("")
+    }
+
+
+    </table>
+
+
+    </body>
+
+    </html>
+
+    `;
+
+
+    let win =
+        window.open(
+            "",
+            "_blank"
+        );
+
+
+    if(!win){
+
+        alert(
+            "Please allow pop-ups to print the report."
+        );
+
+        return;
+    }
+
+
+    win.document.write(html);
+
+    win.document.close();
+
+    win.print();
+
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th,
-td{
-border:1px solid #999;
-padding:8px;
-}
-
-th{
-background:#facc15;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1>
-Kamala Banana Leaf Export Pvt Ltd
-</h1>
-
-<h2>
-Orders Report
-</h2>
-
-<p>
-Total Orders:
-${orders.length}
-</p>
-
-<p>
-Total Sales:
-₹${total.toLocaleString("en-IN")}
-</p>
-
-<table>
-
-<tr>
-
-<th>Order ID</th>
-<th>Customer</th>
-<th>Product</th>
-<th>Amount</th>
-<th>Status</th>
-
-</tr>
-
-${
-orders
-.map(
-o=>`
-
-<tr>
-
-<td>${o.id}</td>
-
-<td>${o.customer}</td>
-
-<td>${o.product}</td>
-
-<td>₹${o.amount}</td>
-
-<td>${o.status}</td>
-
-</tr>
-
-`
-)
-.join("")
-}
-
-</table>
-
-</body>
-
-</html>
-
-`;
 
 
-let win =
-window.open(
-"",
-"_blank"
-);
-
-
-win.document.write(html);
-
-win.document.close();
-
-win.print();
-
-}
-
-
-/* ================= SAVE DATA ================= */
+/* =====================================================
+SAVE DATA
+===================================================== */
 
 function saveData(){
 
-localStorage.setItem(
-"kamalaOrders",
-JSON.stringify(orders)
-);
+    localStorage.setItem(
+        "kamalaOrders",
+        JSON.stringify(orders)
+    );
 
-localStorage.setItem(
-"kamalaProducts",
-JSON.stringify(products)
-);
 
-localStorage.setItem(
-"kamalaEmployees",
-JSON.stringify(employees)
-);
+    localStorage.setItem(
+        "kamalaProducts",
+        JSON.stringify(products)
+    );
+
+
+    localStorage.setItem(
+        "kamalaEmployees",
+        JSON.stringify(employees)
+    );
 
 }
 
 </script>
 
 
-<!-- ================= SERVICE WORKER ================= -->
+
+<!-- =====================================================
+SERVICE WORKER
+===================================================== -->
 
 <script>
 
 if(
-"serviceWorker"
-in navigator
+    "serviceWorker" in navigator
 ){
 
-window.addEventListener(
-"load",
-()=>{
+    window.addEventListener(
+        "load",
+        () => {
 
-navigator.serviceWorker
-.register("sw.js")
+            navigator.serviceWorker
+            .register("sw.js")
 
-.then(
-()=>{
-console.log(
-"Kamala Banana App Ready"
-);
-}
-)
+            .then(
+                () => {
 
-.catch(
-err=>{
-console.log(
-"Service Worker Error:",
-err
-);
-}
-);
+                    console.log(
+                        "Kamala Banana App Ready"
+                    );
 
-}
-);
+                }
+            )
+
+            .catch(
+                err => {
+
+                    console.log(
+                        "Service Worker Error:",
+                        err
+                    );
+
+                }
+            );
+
+        }
+    );
 
 }
 
 </script>
 
+
 </body>
-    </html>
+
+</html>
