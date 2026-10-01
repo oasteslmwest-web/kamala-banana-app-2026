@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Kamala Banana Leaf Export Pvt Ltd</title>
 
+<!-- PWA -->
 <meta name="theme-color" content="#f59e0b">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,6 +15,7 @@
 <link rel="manifest" href="manifest.json">
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -25,6 +28,8 @@ body{
     color:#333;
 }
 
+/* HEADER */
+
 header{
     background:linear-gradient(135deg,#f59e0b,#facc15);
     color:#3b2200;
@@ -35,11 +40,7 @@ header{
     box-shadow:0 3px 10px #0002;
 }
 
-.container{
-    max-width:1100px;
-    margin:25px auto;
-    padding:15px;
-}
+/* LOGIN */
 
 .login-box{
     max-width:430px;
@@ -64,7 +65,8 @@ header{
     margin-bottom:25px;
 }
 
-input,select{
+input,
+select{
     width:100%;
     padding:13px;
     margin:8px 0 15px;
@@ -101,6 +103,8 @@ button{
     margin-bottom:10px;
 }
 
+/* APP */
+
 #app{
     display:none;
 }
@@ -109,6 +113,8 @@ button{
     display:flex;
     min-height:100vh;
 }
+
+/* SIDEBAR */
 
 .sidebar{
     width:240px;
@@ -135,6 +141,8 @@ button{
     background:#ffffff22;
 }
 
+/* MAIN */
+
 .main{
     flex:1;
     padding:20px;
@@ -151,6 +159,8 @@ button{
     align-items:center;
 }
 
+/* CARDS */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -166,6 +176,10 @@ button{
     cursor:pointer;
 }
 
+.card:hover{
+    transform:translateY(-2px);
+}
+
 .card h3{
     color:#a85d00;
     margin-bottom:10px;
@@ -174,6 +188,8 @@ button{
 .card strong{
     font-size:28px;
 }
+
+/* SECTIONS */
 
 .section{
     display:none;
@@ -188,13 +204,16 @@ button{
     display:block;
 }
 
+/* TABLE */
+
 table{
     width:100%;
     border-collapse:collapse;
     margin-top:15px;
 }
 
-th,td{
+th,
+td{
     padding:12px;
     border-bottom:1px solid #eee;
     text-align:left;
@@ -203,6 +222,8 @@ th,td{
 th{
     background:#fff3cd;
 }
+
+/* STATUS */
 
 .badge{
     padding:6px 10px;
@@ -225,6 +246,8 @@ th{
     background:#dbeafe;
     color:#1e40af;
 }
+
+/* MODAL */
 
 .modal{
     display:none;
@@ -252,6 +275,8 @@ th{
     color:white;
 }
 
+/* REPORT */
+
 .report-card{
     background:#fff8dc;
     padding:15px;
@@ -261,6 +286,8 @@ th{
     justify-content:space-between;
     align-items:center;
 }
+
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -279,6 +306,10 @@ th{
 
 @media(max-width:500px){
 
+    .login-box{
+        margin:30px 15px;
+    }
+
     .cards{
         grid-template-columns:1fr;
     }
@@ -287,7 +318,8 @@ th{
         font-size:13px;
     }
 
-    th,td{
+    th,
+    td{
         padding:8px;
     }
 
@@ -296,50 +328,66 @@ th{
         gap:10px;
         align-items:flex-start;
     }
+
+    .main{
+        padding:12px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<!-- ================= LOGIN ================= -->
 
 <div id="loginPage">
 
 <header>
-    Kamala Banana Leaf Export Pvt Ltd
+Kamala Banana Leaf Export Pvt Ltd
 </header>
 
 <div class="login-box">
 
-<div class="logo">🍃</div>
-
-<div class="company">
-    Kamala Banana Leaf Export Pvt Ltd
+<div class="logo">
+🍃
 </div>
 
-<label>Email</label>
+<div class="company">
+Kamala Banana Leaf Export Pvt Ltd
+</div>
+
+<label>
+Email
+</label>
 
 <input
 type="email"
 id="email"
-placeholder="Enter email">
+placeholder="Enter company email"
+autocomplete="username">
 
 <div id="emailError" class="error"></div>
 
-<label>Password</label>
+<label>
+Password
+</label>
 
 <div style="position:relative;">
 
 <input
 type="password"
 id="password"
-placeholder="Enter password">
+placeholder="Enter password"
+autocomplete="current-password">
 
 <button
+type="button"
 onclick="togglePassword()"
 style="position:absolute;right:5px;top:5px;background:none;">
+
 👁️
+
 </button>
 
 </div>
@@ -378,10 +426,11 @@ Forgot Password?
 </button>
 
 </div>
+
 </div>
 
 
-<!-- APP -->
+<!-- ================= APP ================= -->
 
 <div id="app">
 
@@ -392,7 +441,9 @@ Forgot Password?
 
 <div class="sidebar">
 
-<h2>🍃 KBL</h2>
+<h2>
+🍃 KBL
+</h2>
 
 <button onclick="showSection('dashboard')">
 🏠 Dashboard
@@ -446,16 +497,19 @@ Dashboard
 </div>
 
 
-<!-- DASHBOARD -->
+<!-- ================= DASHBOARD ================= -->
 
 <div id="dashboard" class="section active">
 
 <div class="cards">
 
-<div class="card"
+<div
+class="card"
 onclick="showSection('orders')">
 
-<h3>Total Orders</h3>
+<h3>
+Total Orders
+</h3>
 
 <strong id="totalOrders">
 0
@@ -463,10 +517,13 @@ onclick="showSection('orders')">
 
 </div>
 
-<div class="card"
+<div
+class="card"
 onclick="showSection('products')">
 
-<h3>Total Products</h3>
+<h3>
+Total Products
+</h3>
 
 <strong id="totalProducts">
 0
@@ -474,10 +531,13 @@ onclick="showSection('products')">
 
 </div>
 
-<div class="card"
+<div
+class="card"
 onclick="showSection('employees')">
 
-<h3>Employees</h3>
+<h3>
+Employees
+</h3>
 
 <strong id="totalEmployees">
 0
@@ -485,10 +545,13 @@ onclick="showSection('employees')">
 
 </div>
 
-<div class="card"
+<div
+class="card"
 onclick="showSection('reports')">
 
-<h3>Total Sales</h3>
+<h3>
+Total Sales
+</h3>
 
 <strong id="totalSales">
 ₹0
@@ -498,20 +561,20 @@ onclick="showSection('reports')">
 
 </div>
 
-<h3>Recent Orders</h3>
+<h3>
+Recent Orders
+</h3>
 
 <table>
 
 <thead>
 
 <tr>
-
 <th>Order ID</th>
 <th>Customer</th>
 <th>Product</th>
 <th>Amount</th>
 <th>Status</th>
-
 </tr>
 
 </thead>
@@ -524,11 +587,13 @@ onclick="showSection('reports')">
 </div>
 
 
-<!-- ORDERS -->
+<!-- ================= ORDERS ================= -->
 
 <div id="orders" class="section">
 
-<h2>📦 Orders</h2>
+<h2>
+📦 Orders
+</h2>
 
 <br>
 
@@ -566,11 +631,13 @@ onclick="addDemoOrder()">
 </div>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
 <div id="products" class="section">
 
-<h2>🌿 Products</h2>
+<h2>
+🌿 Products
+</h2>
 
 <br>
 
@@ -605,11 +672,13 @@ onclick="addProduct()">
 </div>
 
 
-<!-- EMPLOYEES -->
+<!-- ================= EMPLOYEES ================= -->
 
 <div id="employees" class="section">
 
-<h2>👨‍💼 Employees</h2>
+<h2>
+👨‍💼 Employees
+</h2>
 
 <table>
 
@@ -635,17 +704,21 @@ onclick="addProduct()">
 </div>
 
 
-<!-- REPORTS -->
+<!-- ================= REPORTS ================= -->
 
 <div id="reports" class="section">
 
-<h2>📊 Reports</h2>
+<h2>
+📊 Reports
+</h2>
 
 <div class="cards">
 
 <div class="card">
 
-<h3>Orders</h3>
+<h3>
+Orders
+</h3>
 
 <strong id="reportOrders">
 0
@@ -655,7 +728,9 @@ onclick="addProduct()">
 
 <div class="card">
 
-<h3>Sales</h3>
+<h3>
+Sales
+</h3>
 
 <strong id="reportSales">
 ₹0
@@ -665,7 +740,9 @@ onclick="addProduct()">
 
 <div class="card">
 
-<h3>Products</h3>
+<h3>
+Products
+</h3>
 
 <strong id="reportProducts">
 0
@@ -675,7 +752,9 @@ onclick="addProduct()">
 
 <div class="card">
 
-<h3>Employees</h3>
+<h3>
+Employees
+</h3>
 
 <strong id="reportEmployees">
 0
@@ -685,7 +764,9 @@ onclick="addProduct()">
 
 </div>
 
-<h3>Admin Report List</h3>
+<h3>
+Admin Report List
+</h3>
 
 <div class="report-card">
 
@@ -764,11 +845,13 @@ onclick="printReport()">
 </div>
 
 
-<!-- PROFILE -->
+<!-- ================= PROFILE ================= -->
 
 <div id="profile" class="section">
 
-<h2>👤 Profile</h2>
+<h2>
+👤 Profile
+</h2>
 
 <br>
 
@@ -795,11 +878,13 @@ Administrator
 </div>
 
 
-<!-- SETTINGS -->
+<!-- ================= SETTINGS ================= -->
 
 <div id="settings" class="section">
 
-<h2>⚙️ Settings</h2>
+<h2>
+⚙️ Settings
+</h2>
 
 <br>
 
@@ -843,7 +928,7 @@ Save Settings
 </div>
 
 
-<!-- ORDER MODAL -->
+<!-- ================= ORDER MODAL ================= -->
 
 <div id="orderModal" class="modal">
 
@@ -869,7 +954,7 @@ X
 </div>
 
 
-<!-- REPORT MODAL -->
+<!-- ================= REPORT MODAL ================= -->
 
 <div id="reportModal" class="modal">
 
@@ -897,6 +982,8 @@ X
 
 
 <script>
+
+/* ================= DATA ================= */
 
 let orders =
 JSON.parse(
@@ -1003,28 +1090,38 @@ status:"Active"
 ];
 
 
+/* ================= PASSWORD ================= */
+
 function togglePassword(){
 
-let p =
+let password =
 document.getElementById("password");
 
-p.type =
-p.type==="password"
+password.type =
+password.type === "password"
 ? "text"
 : "password";
 
 }
 
 
+/* ================= LOGIN ================= */
+
 function login(){
 
 let email =
 document.getElementById("email")
-.value.trim();
+.value
+.trim();
 
 let password =
 document.getElementById("password")
-.value.trim();
+.value
+.trim();
+
+let remember =
+document.getElementById("remember")
+.checked;
 
 document.getElementById("emailError")
 .innerText="";
@@ -1034,17 +1131,27 @@ document.getElementById("passwordError")
 
 let valid=true;
 
-if(!email.includes("@")){
+
+/* EMAIL VALIDATION */
+
+if(
+!email ||
+!email.includes("@") ||
+!email.includes(".")
+){
 
 document.getElementById("emailError")
 .innerText=
-"Please enter a valid email";
+"Please enter a valid company email address";
 
 valid=false;
 
 }
 
-if(password===""){
+
+/* PASSWORD VALIDATION */
+
+if(!password){
 
 document.getElementById("passwordError")
 .innerText=
@@ -1054,7 +1161,50 @@ valid=false;
 
 }
 
-if(!valid) return;
+if(!valid){
+
+return;
+
+}
+
+
+/* LOGIN SESSION */
+
+if(remember){
+
+localStorage.setItem(
+"kamalaLogin",
+"true"
+);
+
+sessionStorage.removeItem(
+"kamalaLogin"
+);
+
+}else{
+
+sessionStorage.setItem(
+"kamalaLogin",
+"true"
+);
+
+localStorage.removeItem(
+"kamalaLogin"
+);
+
+}
+
+
+/* OPEN APP */
+
+openDashboard();
+
+}
+
+
+/* ================= OPEN DASHBOARD ================= */
+
+function openDashboard(){
 
 document.getElementById("loginPage")
 .style.display="none";
@@ -1064,8 +1214,74 @@ document.getElementById("app")
 
 renderAll();
 
+showSection("dashboard");
+
 }
 
+
+/* ================= AUTO LOGIN ================= */
+
+window.addEventListener(
+"DOMContentLoaded",
+function(){
+
+let loggedIn =
+localStorage.getItem("kamalaLogin")
+=== "true"
+||
+sessionStorage.getItem("kamalaLogin")
+=== "true";
+
+
+if(loggedIn){
+
+openDashboard();
+
+}else{
+
+document.getElementById("loginPage")
+.style.display="block";
+
+document.getElementById("app")
+.style.display="none";
+
+}
+
+}
+);
+
+
+/* ================= LOGOUT ================= */
+
+function logout(){
+
+localStorage.removeItem(
+"kamalaLogin"
+);
+
+sessionStorage.removeItem(
+"kamalaLogin"
+);
+
+document.getElementById("app")
+.style.display="none";
+
+document.getElementById("loginPage")
+.style.display="block";
+
+document.getElementById("email")
+.value="";
+
+document.getElementById("password")
+.value="";
+
+document.getElementById("remember")
+.checked=false;
+
+}
+
+
+/* ================= FORGOT PASSWORD ================= */
 
 function forgotPassword(){
 
@@ -1076,30 +1292,22 @@ alert(
 }
 
 
-function logout(){
-
-document.getElementById("app")
-.style.display="none";
-
-document.getElementById("loginPage")
-.style.display="block";
-
-}
-
+/* ================= NAVIGATION ================= */
 
 function showSection(id){
 
 document
 .querySelectorAll(".section")
-.forEach(s=>{
-
-s.classList.remove("active");
-
-});
+.forEach(
+section=>{
+section.classList.remove("active");
+}
+);
 
 document
 .getElementById(id)
 .classList.add("active");
+
 
 let names={
 
@@ -1113,11 +1321,14 @@ settings:"Settings"
 
 };
 
+
 document.getElementById("pageTitle")
 .innerText=names[id];
 
 }
 
+
+/* ================= STATUS ================= */
 
 function statusBadge(status){
 
@@ -1133,7 +1344,11 @@ ${status}
 }
 
 
+/* ================= RENDER ================= */
+
 function renderAll(){
+
+/* DASHBOARD COUNTS */
 
 document.getElementById("totalOrders")
 .innerText=orders.length;
@@ -1144,15 +1359,21 @@ document.getElementById("totalProducts")
 document.getElementById("totalEmployees")
 .innerText=employees.length;
 
+
 let sales =
 orders.reduce(
 (sum,o)=>sum+Number(o.amount),
 0
 );
 
+
 document.getElementById("totalSales")
 .innerText=
-"₹"+sales.toLocaleString("en-IN");
+"₹"+
+sales.toLocaleString("en-IN");
+
+
+/* REPORT COUNTS */
 
 document.getElementById("reportOrders")
 .innerText=orders.length;
@@ -1165,12 +1386,19 @@ document.getElementById("reportEmployees")
 
 document.getElementById("reportSales")
 .innerText=
-"₹"+sales.toLocaleString("en-IN");
+"₹"+
+sales.toLocaleString("en-IN");
 
+
+/* DASHBOARD ORDERS */
 
 document.getElementById("dashboardOrders")
 .innerHTML=
-orders.slice(0,5).map(o=>`
+
+orders
+.slice(0,5)
+.map(
+o=>`
 
 <tr>
 
@@ -1191,12 +1419,19 @@ ${statusBadge(o.status)}
 
 </tr>
 
-`).join("");
+`
+)
+.join("");
 
+
+/* ORDERS */
 
 document.getElementById("ordersTable")
 .innerHTML=
-orders.map((o,i)=>`
+
+orders
+.map(
+(o,i)=>`
 
 <tr>
 
@@ -1231,12 +1466,19 @@ View
 
 </tr>
 
-`).join("");
+`
+)
+.join("");
 
+
+/* PRODUCTS */
 
 document.getElementById("productsTable")
 .innerHTML=
-products.map(p=>`
+
+products
+.map(
+p=>`
 
 <tr>
 
@@ -1250,12 +1492,19 @@ products.map(p=>`
 
 </tr>
 
-`).join("");
+`
+)
+.join("");
 
+
+/* EMPLOYEES */
 
 document.getElementById("employeesTable")
 .innerHTML=
-employees.map(e=>`
+
+employees
+.map(
+e=>`
 
 <tr>
 
@@ -1271,10 +1520,14 @@ employees.map(e=>`
 
 </tr>
 
-`).join("");
+`
+)
+.join("");
 
 }
 
+
+/* ================= VIEW ORDER ================= */
 
 function viewOrder(index){
 
@@ -1284,19 +1537,23 @@ document.getElementById("orderDetails")
 .innerHTML=`
 
 <p>
-<b>Order ID:</b> ${o.id}
+<b>Order ID:</b>
+${o.id}
 </p>
 
 <p>
-<b>Customer:</b> ${o.customer}
+<b>Customer:</b>
+${o.customer}
 </p>
 
 <p>
-<b>Product:</b> ${o.product}
+<b>Product:</b>
+${o.product}
 </p>
 
 <p>
-<b>Quantity:</b> ${o.qty}
+<b>Quantity:</b>
+${o.qty}
 </p>
 
 <p>
@@ -1318,6 +1575,8 @@ document.getElementById("orderModal")
 }
 
 
+/* ================= CLOSE MODAL ================= */
+
 function closeModal(id){
 
 document.getElementById(id)
@@ -1325,6 +1584,8 @@ document.getElementById(id)
 
 }
 
+
+/* ================= ADD ORDER ================= */
 
 function addDemoOrder(){
 
@@ -1335,11 +1596,14 @@ orders.push({
 
 id:
 "ORD"+
-String(number).padStart(3,"0"),
+String(number)
+.padStart(3,"0"),
 
-customer:"New Customer",
+customer:
+"New Customer",
 
-product:"Premium Banana Leaf",
+product:
+"Premium Banana Leaf",
 
 qty:100,
 
@@ -1353,17 +1617,25 @@ saveData();
 
 renderAll();
 
-alert("New demo order added.");
+alert(
+"New demo order added successfully."
+);
 
 }
 
+
+/* ================= ADD PRODUCT ================= */
 
 function addProduct(){
 
 let name =
 prompt("Product Name:");
 
-if(!name) return;
+if(!name){
+
+return;
+
+}
 
 let type =
 prompt(
@@ -1372,10 +1644,16 @@ prompt(
 );
 
 let stock =
-prompt("Stock","500");
+prompt(
+"Stock",
+"500"
+);
 
 let price =
-prompt("Price","100");
+prompt(
+"Price",
+"100"
+);
 
 products.push({
 
@@ -1396,12 +1674,17 @@ renderAll();
 }
 
 
+/* ================= VIEW REPORT ================= */
+
 function viewReport(title){
 
 document.getElementById("reportTitle")
 .innerText=title;
 
 let html="";
+
+
+/* SALES REPORT */
 
 if(title==="Sales Report"){
 
@@ -1413,13 +1696,17 @@ orders.reduce(
 
 html=`
 
-<h3>Total Sales</h3>
+<h3>
+Total Sales
+</h3>
 
 <p
 style="
 font-size:28px;
 font-weight:bold;
-color:#a85d00">
+color:#a85d00;
+margin-top:15px;
+">
 
 ₹${total.toLocaleString("en-IN")}
 
@@ -1428,6 +1715,9 @@ color:#a85d00">
 `;
 
 }
+
+
+/* ORDERS REPORT */
 
 else if(title==="Orders Report"){
 
@@ -1444,7 +1734,10 @@ html=`
 
 </tr>
 
-${orders.map(o=>`
+${
+orders
+.map(
+o=>`
 
 <tr>
 
@@ -1461,13 +1754,19 @@ ${orders.map(o=>`
 
 </tr>
 
-`).join("")}
+`
+)
+.join("")
+}
 
 </table>
 
 `;
 
 }
+
+
+/* EMPLOYEE REPORT */
 
 else{
 
@@ -1484,7 +1783,10 @@ html=`
 
 </tr>
 
-${employees.map(e=>`
+${
+employees
+.map(
+e=>`
 
 <tr>
 
@@ -1498,13 +1800,17 @@ ${employees.map(e=>`
 
 </tr>
 
-`).join("")}
+`
+)
+.join("")
+}
 
 </table>
 
 `;
 
 }
+
 
 document.getElementById("reportContent")
 .innerHTML=html;
@@ -1515,28 +1821,36 @@ document.getElementById("reportModal")
 }
 
 
+/* ================= CSV ================= */
+
 function downloadCSV(){
 
-let csv=
+let csv =
 "Order ID,Customer,Product,Quantity,Amount,Status\n";
 
-orders.forEach(o=>{
 
-csv+=
+orders.forEach(
+o=>{
+
+csv +=
 `${o.id},${o.customer},${o.product},${o.qty},${o.amount},${o.status}\n`;
 
-});
+}
+);
 
-let blob=
+
+let blob =
 new Blob(
 [csv],
 {type:"text/csv"}
 );
 
-let url=
+
+let url =
 URL.createObjectURL(blob);
 
-let a=
+
+let a =
 document.createElement("a");
 
 a.href=url;
@@ -1550,6 +1864,8 @@ URL.revokeObjectURL(url);
 
 }
 
+
+/* ================= EXCEL ================= */
 
 function downloadExcel(){
 
@@ -1568,34 +1884,51 @@ let table=`
 
 </tr>
 
-${orders.map(o=>`
+${
+orders
+.map(
+o=>`
 
 <tr>
 
 <td>${o.id}</td>
+
 <td>${o.customer}</td>
+
 <td>${o.product}</td>
+
 <td>${o.qty}</td>
+
 <td>${o.amount}</td>
+
 <td>${o.status}</td>
 
 </tr>
 
-`).join("")}
+`
+)
+.join("")
+}
 
 </table>
+
 `;
 
-let blob=
+
+let blob =
 new Blob(
 [table],
-{type:"application/vnd.ms-excel"}
+{
+type:"application/vnd.ms-excel"
+}
 );
 
-let url=
+
+let url =
 URL.createObjectURL(blob);
 
-let a=
+
+let a =
 document.createElement("a");
 
 a.href=url;
@@ -1610,6 +1943,8 @@ URL.revokeObjectURL(url);
 }
 
 
+/* ================= PRINT / PDF ================= */
+
 function printReport(){
 
 let total =
@@ -1617,6 +1952,7 @@ orders.reduce(
 (s,o)=>s+Number(o.amount),
 0
 );
+
 
 let html=`
 
@@ -1640,7 +1976,8 @@ width:100%;
 border-collapse:collapse;
 }
 
-th,td{
+th,
+td{
 border:1px solid #999;
 padding:8px;
 }
@@ -1664,7 +2001,8 @@ Orders Report
 </h2>
 
 <p>
-Total Orders: ${orders.length}
+Total Orders:
+${orders.length}
 </p>
 
 <p>
@@ -1684,7 +2022,10 @@ Total Sales:
 
 </tr>
 
-${orders.map(o=>`
+${
+orders
+.map(
+o=>`
 
 <tr>
 
@@ -1700,17 +2041,26 @@ ${orders.map(o=>`
 
 </tr>
 
-`).join("")}
+`
+)
+.join("")
+}
 
 </table>
 
 </body>
 
 </html>
+
 `;
 
-let win=
-window.open("","_blank");
+
+let win =
+window.open(
+"",
+"_blank"
+);
+
 
 win.document.write(html);
 
@@ -1720,6 +2070,8 @@ win.print();
 
 }
 
+
+/* ================= SAVE DATA ================= */
 
 function saveData(){
 
@@ -1743,32 +2095,41 @@ JSON.stringify(employees)
 </script>
 
 
-<!-- PWA SERVICE WORKER -->
+<!-- ================= SERVICE WORKER ================= -->
 
 <script>
 
-if ("serviceWorker" in navigator) {
+if(
+"serviceWorker"
+in navigator
+){
 
-    window.addEventListener("load", () => {
+window.addEventListener(
+"load",
+()=>{
 
-        navigator.serviceWorker.register("sw.js")
+navigator.serviceWorker
+.register("sw.js")
 
-        .then(() => {
+.then(
+()=>{
+console.log(
+"Kamala Banana App Ready"
+);
+}
+)
 
-            console.log("App ready");
+.catch(
+err=>{
+console.log(
+"Service Worker Error:",
+err
+);
+}
+);
 
-        })
-
-        .catch(err => {
-
-            console.log(
-                "Service Worker Error:",
-                err
-            );
-
-        });
-
-    });
+}
+);
 
 }
 
